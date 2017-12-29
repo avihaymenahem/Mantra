@@ -1,0 +1,25 @@
+<aside class="menu navigation" [class.is-active]="menuActive">
+  <div *ngIf="project">
+    <p class="menu-label">Project</p>
+    <ul class="menu-list">
+      <li><a (click)="closeMenu()" [routerLink]="['/projects', project.ID]" [routerLinkActiveOptions]="{ exact: true }"
+             routerLinkActive="is-active">Categories</a></li>
+      <li><a (click)="closeMenu()" [routerLink]="['/projects', project.ID, 'keys']" [routerLinkActiveOptions]="{ exact: true }"
+             routerLinkActive="is-active">Strings</a></li>
+      <li><a (click)="closeMenu()" [routerLink]="['/projects', project.ID, 'locales']" [routerLinkActiveOptions]="{ exact: true }"
+             routerLinkActive="is-active">Locales</a></li>
+      <div>
+        <li><a (click)="closeMenu()" [routerLink]="['/projects', project.ID, 'settings']" [routerLinkActiveOptions]="{ exact: true }"
+               routerLinkActive="is-active">Settings</a></li>
+      </div>
+    </ul>
+    <div>
+      <p class="menu-label">Administration</p>
+      <ul class="menu-list">
+        <li><a (click)="closeMenu()" [routerLink]="['/projects', project.ID, 'team']" [routerLinkActiveOptions]="{ exact: true }"
+               routerLinkActive="is-active">Project Team</a></li>
+      </ul>
+    </div>
+  </div>
+</aside>
+<div class="sidenav-overlay" [class.is-active]="menuActive" (click)="closeMenu()"></div>

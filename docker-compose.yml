@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+#  angular:
+#    container_name: angular-client-dev
+#    build: client
+#    ports:
+#      - 4200:4200
+
+  api:
+    container_name: express-backend-dev
+    restart: always
+    build: api
+    links:
+      - mysqldb
+    depends_on:
+      - mysqldb
+    ports:
+      - 3000:3000
+
+  mysqldb:
+    container_name: mysql-db-dev
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1Udm0bMAhA
+      MYSQL_DATABASE: Mantra
+    ports:
+      - 3306:3306
+
+  adminer:
+    container_name: mysql-admin-dev
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

@@ -1,0 +1,14 @@
+<article class="media category center-align" [routerLink]="['/projects', projectId, 'category', category.ID]" *ngFor="let category of categories">
+  <div class="media-content">
+    <div class="content">
+      <p class="title is-5">{{category.Title}}</p>
+      <p><strong>{{category.keys?.length}}</strong> {{ category.Description }}</p>
+    </div>
+  </div>
+</article>
+
+<div *ngIf="categories && categories.length <= 0">
+  <div class="notification is-warning">
+    You don't have any Categories yet. Add one to get started!
+  </div>
+</div>

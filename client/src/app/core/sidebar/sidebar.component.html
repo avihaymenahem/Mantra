@@ -1,0 +1,24 @@
+<nav class="appbar">
+  <div class="appbar-item menu-toggle">
+        <span id="nav-toggle" class="nav-toggle" (click)="toggleMenu()" [class.is-active]="isMenuActive">
+                                <span></span>
+        <span></span>
+        <span></span>
+        </span>
+  </div>
+
+  <div class="appbar-item">
+    <figure class="ct-logo image is-24x24">
+      <img src="/assets/logo.png">
+    </figure>
+    <h1 class="mantra-title">{{title}}</h1>
+  </div>
+
+  <div class="appbar-fill-center"></div>
+
+  <div class="appbar-items-right">
+    <a class="appbar-item appbar-link" [routerLink]="['/projects']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="is-active" [class.is-hidden]="!isAuth">Projects</a>
+    <a class="appbar-item appbar-link" [routerLink]="['/me']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="is-active" [class.is-hidden]="!isAuth">Account</a>
+    <a class="appbar-item appbar-link" (click)="logout()" [class.is-hidden]="!isAuth">Logout</a>
+  </div>
+</nav>

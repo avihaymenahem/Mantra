@@ -1,0 +1,17 @@
+<section class="flex">
+  <app-project-menu [project]="project"></app-project-menu>
+  <div class="content">
+    <div class="project-header">
+      <div class="branding">
+        <p>Project: <strong>{{ project?.Title }}</strong> - {{ project?.Description }}</p>
+      </div>
+      <div class="info">
+        <p>Strings</p>
+        <!--<p><strong>{{project?.keys.length}}</strong> Strings</p>-->
+      </div>
+    </div>
+    <div class="router-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+<button class="button is-success" (click)="openModal()">Add Category</button>
+<div class="modal" [class.is-active]="modalOpen">
+  <div class="modal-background" (click)="closeModal()"></div>
+  <div class="modal-content">
+    <div class="box">
+
+      <h1 class="title">Add a new Category</h1>
+
+      <form (ngSubmit)="createCategory()" #f="ngForm">
+        <div class="control">
+          <label class="label" for="Title">Title</label>
+          <input type="text" class="input" name="Title" placeholder="The category's name" [disabled]="loading" [(ngModel)]="category.Title"
+                 autofocus required autocomplete="off">
+        </div>
+        <div class="control">
+          <label class="label" for="Description">Description</label>
+          <input type="text" class="input" name="Description" placeholder="Short description" [disabled]="loading" [(ngModel)]="category.Description"
+                 autofocus required autocomplete="off">
+        </div>
+        <div class="control">
+          <button type="button" class="button spacer-top-5" (click)="closeModal()" [disabled]="loading">Cancel</button>
+          <button type="submit" class="button is-success spacer-top-5" [class.is-loading]="loading" [disabled]="!f.form.valid || loading">Create</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
