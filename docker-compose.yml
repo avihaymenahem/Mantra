@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-#  angular:
-#    container_name: angular-client-dev
-#    build: client
-#    ports:
-#      - 4200:4200
+  angular:
+    container_name: angular-client-dev
+    build: client
+    ports:
+      - 4200:4200
 
   api:
     container_name: express-backend-dev
